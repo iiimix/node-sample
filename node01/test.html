@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  div.bg {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+  }
+
+  #green {
+    background-color: green;
+  }
+  .weight {
+    background-color: blueviolet !important;  /*rgb(138, 43, 226)*/
+  }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div id="green" class="bg weight" style="background-color: rgb(88,0,55)"></div>
+  <script>
+    window.onload = (e) => {
+      console.log('onload..........',e);
+    }
+  document.addEventListener('DOMContentLoaded', (e) => {
+    console.log("loaded......", e)
+
+    let div = document.getElementsByClassName('weight')[0]
+    console.log('style.::::' + div.style.backgroundColor);
+    console.log('computedStyle.::::' + window.getComputedStyle(div)['background-color']);
+    div.style.backgroundColor = 'rgb(255, 90, 00)'
+    console.log('style.::::' + div.style.backgroundColor);
+    console.log('computedStyle.::::' + window.getComputedStyle(div)['background-color']);
+  })
+  </script>
+</body>
+</html>
